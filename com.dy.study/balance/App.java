@@ -19,13 +19,13 @@ public class App {
         for (int i = 0; i <460; i++) {
             long startTime = System.currentTimeMillis();
             long startno=System.nanoTime();
-            Node i1 = smoothWeightedRoundRobin.select();
+            Node node = smoothWeightedRoundRobin.select();
 //            if (i==1) {
-//                i1 = smoothWeightedRoundRobin.select();
+//                node = smoothWeightedRoundRobin.select();
 //            }
             long endTime = System.currentTimeMillis();
             long endno=System.nanoTime();
-            System.out.println(i+":"+i1.getServerName()+","+(endTime-startTime)+"ms,"+(endno-startno)+"ns");
+            System.out.println(i+",选中的node:"+node.getServerName()+",消耗时间:"+(endTime-startTime)+"ms,"+(endno-startno)+"ns");
         }
     }
 }
